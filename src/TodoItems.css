@@ -1,0 +1,48 @@
+/* .todoList {
+    width: 500px;
+    border: 1px solid;
+    
+   
+} */
+
+.itemsList {
+    width: 500px;
+    height:min-content;
+    display: inline-block;
+    border: 1px solid;
+    margin: 5px;
+
+}
+
+.item {
+    background-color: rgb(68, 99, 126);
+    
+    align-content: right;
+    margin: 15px;
+
+
+}
+
+.item .itemText {
+    color: antiquewhite;
+    text-align: center;
+}
+
+.complited {
+    color: rgb(150, 95, 24);
+}
+
+.item div {
+    margin: 10px;
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+    /* border: 1px solid */
+}
+
+
+
+.item .itemDelete {
+    float: right;
+
+}
