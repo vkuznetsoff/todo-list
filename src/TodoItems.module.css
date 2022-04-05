@@ -5,31 +5,40 @@
    
 } */
 
+.div {
+    word-wrap: break-word;
+}
 .itemsList {
-    width: 500px;
-    height:min-content;
+    width: 200px;
+    /* height:min-content; */
     display: inline-block;
-    border: 1px solid;
+    /* border: 1px solid; */
     margin: 5px;
+    
 
 }
 
 .item {
     background-color: rgb(68, 99, 126);
-    
+    color: antiquewhite;
     align-content: right;
     margin: 15px;
-
-
+    border-radius: 5px;
+    height: max-content;
+    word-wrap: break-word;
+    
+    
 }
 
-.item .itemText {
-    color: antiquewhite;
+.itemText {
+    
     text-align: center;
+    
+    
 }
 
 .complited {
-    color: rgb(150, 95, 24);
+    text-decoration: line-through;
 }
 
 .item div {
@@ -37,12 +46,11 @@
     display: inline-block;
     align-items: center;
     cursor: pointer;
+    word-wrap: break-word;
     /* border: 1px solid */
 }
 
-
-
-.item .itemDelete {
+ .itemDelete {
+    color: red;
     float: right;
-
 }

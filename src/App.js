@@ -3,17 +3,10 @@ import './App.css';
 import TodoList from './TodoList';
 import uniqid from "uniqid"
 
-const initList = [
-  {
-    id: uniqid(),
-    value: '1',
-    complited: false
-  }
-]
+const initList = JSON.parse(localStorage.getItem("todoList"))
 function App() {
 
-
-  const [todoList, setTodoList] = useState([])
+  const [todoList, setTodoList] = useState(initList)
 
   const AddItem = (value) => {
     if (value) {
@@ -31,11 +24,15 @@ function App() {
   }
 
   const SetComplited = (id) => {
-    debugger
-    setTodoList([...todoList.map(el => (el.id===id) && {...todoList, complited: !el.complited} )])
+    
+    setTodoList([
+      ...todoList.map( (el) => 
+      el.id===id ? {...el, complited: !el.complited} : {...el} )])
+    
   }
 
   return (
+    
     <div className="App">
       <header className='todoHeader'>
         TodoList: {todoList.length}
