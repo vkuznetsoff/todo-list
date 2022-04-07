@@ -6,7 +6,8 @@ const TodoItems = ({ items, RemoveItem, SetComplited }) => {
     RemoveItem(id);
   };
 
-  const handleItem = (id) => {
+  const handleItem = (e, id) => {
+    
     SetComplited(id);
   };
   let itemsList = items.map((i) => (
@@ -19,31 +20,38 @@ const TodoItems = ({ items, RemoveItem, SetComplited }) => {
   ));
 
   useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(items))
+    localStorage.setItem("todoList", JSON.stringify(items));
   }, [items]);
 
-  return <div className={s.itemsList}>{itemsList}</div>;
+  return (
+    <div>
+      <div className={s.container}>{itemsList}</div>
+    </div>
+  );
 };
 
 const Item = ({ item, handleDelete, handleItem }) => {
   return (
-    <div key={item.id} className={s.item}>
-      <div
-        className={item.complited ? s.complited : s.itemText}
-        onClick={() => {
-          handleItem(item.id);
-        }}
-      >
-        {item.value}
-      </div>
+    <div>
+     
+      <div key={item.id} className={s.item}>
+        <div
+          className={item.complited ? `${s.itemText} ${s.complited}` : s.itemText}
+          onClick={() => {
+            handleItem(item.id);
+          }}
+        >
+          {item.value}
+        </div>
 
-      <div
-        className={s.itemDelete}
-        onClick={() => {
-          handleDelete(item.id);
-        }}
-      >
-        X
+        <div
+          className={s.itemDelete}
+          onClick={() => {
+            handleDelete(item.id);
+          }}
+        >
+          X
+        </div>
       </div>
     </div>
   );

@@ -1,56 +1,72 @@
-/* .todoList {
-    width: 500px;
-    border: 1px solid;
-    
-   
-} */
-
-.div {
-    word-wrap: break-word;
-}
-.itemsList {
-    width: 200px;
-    /* height:min-content; */
-    display: inline-block;
-    /* border: 1px solid; */
-    margin: 5px;
-    
-
+.container {
+  margin-top: 10px;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .item {
-    background-color: rgb(68, 99, 126);
-    color: antiquewhite;
-    align-content: right;
-    margin: 15px;
-    border-radius: 5px;
-    height: max-content;
-    word-wrap: break-word;
-    
-    
+  margin-top: 5px;
+  background: linear-gradient(20deg,  #0f56da, #779de2);
+  border-radius: 10px;
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
 }
 
 .itemText {
-    
-    text-align: center;
-    
-    
-}
-
-.complited {
-    text-decoration: line-through;
+  margin: 15px;
+  width: 280px;
+  word-wrap: break-word;
+  text-align: left;
+  color: rgb(231, 245, 200);
+  font-weight: 500;
+  font-size: 26px;
 }
 
 .item div {
-    margin: 10px;
-    display: inline-block;
-    align-items: center;
-    cursor: pointer;
-    word-wrap: break-word;
-    /* border: 1px solid */
+  cursor: pointer;
+  align-self: center;
 }
 
- .itemDelete {
-    color: red;
-    float: right;
+.complited {
+  text-decoration: line-through;
 }
+
+.itemDelete {
+  margin-right: 15px;
+  margin-left: 15px;
+  color: tomato;
+}
+
+.inputBlock  {
+    
+    display: flex;
+    /* justify-content: space-between; */
+    width: 350px;
+    justify-content:flex-end;
+    
+}
+
+.addButton {
+  padding: 16px 7px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(20deg,  #0f56da, #779de2);
+  color: rgb(231, 245, 200);
+  width: 70px;
+}
+
+input {
+    width: 280px;
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #0f56da;
+  outline: none;
+  background: transparent;
+ 
+}
+

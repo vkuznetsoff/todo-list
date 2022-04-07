@@ -1,41 +1,50 @@
-import { useRef, useState } from "react"
-import TodoItems from "./TodoItems"
-
+import { useRef, useState } from "react";
+import TodoItems from "./TodoItems";
+import s from "./TodoItems.module.css";
 
 const TodoList = ({ items, AddItem, RemoveItem, SetComplited }) => {
+  const handleButton = () => {
+    AddItem(userInput);
+    setUserInput("");
+  };
 
-    const handleButton = () => {
-        AddItem(userInput)
-        setUserInput('')
+  const handleKeyPress = (e) => {
+    if (e.key == "Enter") {
+      handleButton();
     }
+  };
 
-    const handleKeyPress = (e) => {
-        if (e.key == 'Enter') {
-            handleButton()
-        }
-    }
+  const handleInput = (e) => {
+    setUserInput(e.currentTarget.value);
+  };
 
-    const handleInput = (e) => {
+  const [userInput, setUserInput] = useState("");
 
-        setUserInput(e.currentTarget.value)
-    }
+  return (
+    <div>
+      <div className={s.inputBlock}>
+        <input
+          value={userInput}
+          onKeyDown={handleKeyPress}
+          type="text"
+          onChange={handleInput}
+        />
 
-    const [userInput, setUserInput] = useState('')
+        <button className={s.addButton} onClick={handleButton}>
+          Add
+        </button>
+      </div>
 
-    return (
-        <div >
-            <input value={userInput} onKeyDown={handleKeyPress} type='text'
-                onChange={handleInput} />
-                
-            <button onClick={handleButton}>Add</button>
+      <div>
+        <TodoItems
+          items={items}
+          removeItem={RemoveItem}
+          RemoveItem={RemoveItem}
+          SetComplited={SetComplited}
+        />
+      </div>
+    </div>
+  );
+};
 
-            <div className="todoList">
-                <TodoItems items={items} removeItem={RemoveItem} RemoveItem={RemoveItem}
-                    SetComplited={SetComplited} />
-            </div>
-
-        </div>
-    )
-}
-
-export default TodoList
+export default TodoList;
